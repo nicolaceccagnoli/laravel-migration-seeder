@@ -64,7 +64,7 @@
     <div class="row justify-content-center">
         <div class="col-auto">
 
-            <a href="{{ route('trains.show') }}" class="btn btn-primary mt-5">
+            <a href="{{ route('trains.show', ['todayTrain' => $singleTrain->departure_hour]) }}" class="btn btn-primary mt-5">
                 Vai ai treni di oggi
             </a>
 

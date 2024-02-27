@@ -29,9 +29,9 @@ class TrainController extends Controller
 
         $today = Carbon::now()->format("Y-m-d");
 
-        dd($today);
+        // dd($today);
 
-        $todayTrain = Train::where('departure_hour', '>=', '2024-02-27')->get();
+        $todayTrain = Train::where('departure_hour', '>=', $today)->get();
 
         // dd('', $todayTrain);
 
