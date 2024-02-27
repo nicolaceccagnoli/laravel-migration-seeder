@@ -16,6 +16,19 @@ class TrainController extends Controller
 
         // dd("", $trains);
 
-        return view("subpages.trains");
+        return view("trains.trains", compact("trains"));
+    }
+
+    public function show() {
+        // SELECT * 
+        // FROM `trains` 
+        // WHERE departure_hour >= 2024-27-02; 
+
+        $todayTrain = Train::where('departure_hour', '>=', '2024-02-27')->get();
+
+        // dd('', $train);
+
+        return view('trains.show', compact('todayTrain'));
+
     }
 }
