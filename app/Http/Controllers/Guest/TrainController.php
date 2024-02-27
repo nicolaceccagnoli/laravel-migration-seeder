@@ -14,7 +14,7 @@ class TrainController extends Controller
 
         $trains = Train::all();
 
-        // dd("", $trains);
+        dd("", $trains);
 
         return view("trains.trains", compact("trains"));
     }
@@ -26,7 +26,7 @@ class TrainController extends Controller
 
         $todayTrain = Train::where('departure_hour', '>=', '2024-02-27')->get();
 
-        // dd('', $train);
+        // dd('', $todayTrain);
 
         return view('trains.show', compact('todayTrain'));
 

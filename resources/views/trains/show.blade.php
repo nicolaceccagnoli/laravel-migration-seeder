@@ -13,16 +13,18 @@
             <div class="card">
                 <div class="card-body text-center">
 
-                    <h3>
-                        {{ $todayTrain->company }}
-                    </h3>
+                    @foreach ($todayTrain as $singleTrain)
+                        <h3>
+                            {{ $singleTrain->company }}
+                        </h3>
 
-                    <div>
-                        Stazione di partenza:
-                        <span>
-                            {{ $todayTrain->departure_station }}
-                        </span>
-                    </div>
+                        <div>
+                            Stazione di partenza:
+                            <span>
+                                {{ $singleTrain->departure_station }}
+                            </span>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
