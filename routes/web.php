@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $title = 'Template Starter Laravel';
+    $title = 'Laravel Migration Seeder';
 
     return view('welcome', ['title'=> $title]);
 });
