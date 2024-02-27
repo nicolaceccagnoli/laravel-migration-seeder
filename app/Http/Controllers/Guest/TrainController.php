@@ -14,7 +14,7 @@ class TrainController extends Controller
 
         $trains = Train::all();
 
-        dd("", $trains);
+        // dd("", $trains);
 
         return view("trains.trains", compact("trains"));
     }
