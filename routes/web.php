@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Controllers
+use App\Http\Controllers\Guest\TrainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +23,4 @@ Route::get('/', function () {
     return view('welcome', ['title'=> $title]);
 });
 
-Route::get('/about', function () {
-    return view('subpages.about');
-});
+Route::get('/trains', [TrainController::class, 'index'])->name('trains');

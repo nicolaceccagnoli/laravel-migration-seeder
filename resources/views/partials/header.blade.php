@@ -6,8 +6,8 @@
             'active' => true,
         ],
         [
-            'url' => '/about',
-            'label' => 'Chi siamo',
+            'url' => '/trains',
+            'label' => 'Tutti i treni',
             'active' => true,
         ],
     ];
