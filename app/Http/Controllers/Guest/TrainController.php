@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+// Impoto Carbon
+use Carbon\Carbon;
+
 // Models 
 use App\Models\Train;
 
@@ -23,6 +26,10 @@ class TrainController extends Controller
         // SELECT * 
         // FROM `trains` 
         // WHERE departure_hour >= 2024-27-02; 
+
+        $today = Carbon::now()->format("Y-m-d");
+
+        dd($today);
 
         $todayTrain = Train::where('departure_hour', '>=', '2024-02-27')->get();
 

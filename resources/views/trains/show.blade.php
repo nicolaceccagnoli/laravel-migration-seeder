@@ -9,24 +9,54 @@
 
 
     <div class="row flex-wrap justify-content-center p-2">
-        <div class="col-12 col-sm-3">
-            <div class="card">
-                <div class="card-body text-center">
+        <div class="col-auto col-sm-3">
+            @foreach ($todayTrain as $singleTrain)
+                <div class="card">
+                    <div class="card-body text-center">
 
-                    @foreach ($todayTrain as $singleTrain)
                         <h3>
                             {{ $singleTrain->company }}
                         </h3>
 
-                        <div>
-                            Stazione di partenza:
-                            <span>
-                                {{ $singleTrain->departure_station }}
-                            </span>
-                        </div>
-                    @endforeach
+                        <ul>
+                            <li>
+                                Stazione di partenza:
+                                <span>
+                                    {{ $singleTrain->departure_station }}
+                                </span>
+                            </li>
+                            <li>
+                                Stazione di arrivo:
+                                <span>
+                                    {{ $singleTrain->arrival_station }}
+                                </span>
+                            </li>
+                            <li>
+                                Partenza:
+                                <span>
+                                    {{ $singleTrain->departure_hour }}
+                                </span>
+                            </li>
+                            <li>
+                                Arrivo previsto:
+                                <span>
+                                    {{ $singleTrain->arrival_hour }}
+                                </span>
+                            </li>
+                            @if (!$singleTrain->on_time && !$singleTrain->deleted)
+                                <li>
+                                    Il treno purtroppo è in ritardo
+                                </li>
+                            @endif
+                            @if (!$singleTrain->on_time && $singleTrain->deleted)
+                                <li>
+                                    Il treno è stato cancellato
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
